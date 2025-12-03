@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CGPA to 100 Points Converter</title>
+	<style>
+		/* I had my inspiration through the GKS-G application */
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f4ff;
+			color: #003366;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+		}
+
+		h1 {
+			color: #0047b3;
+			margin-bottom: 20px;
+		}
+
+		.converter {
+			background-color: #ffffff;
+			padding: 30px 40px;
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+			text-align: center;
+		}
+
+		input[type="number"] {
+			padding: 10px;
+			width: 200px;
+			border-radius: 5px;
+			border: 1px solid #0047b3;
+			margin-bottom: 20px;
+			font-size: 16px;
+		}
+
+		button {
+			background-color: #0047b3;
+			color: #ffffff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		button:hover {
+			background-color: #003366;
+		}
+
+		.result {
+			margin-top: 20px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>CGPA to 100 Points Converter</h1>
+	<div class="converter">
+		<input type="number" id="cgpa" placeholder="Enter your CGPA (4.0 scale)" step="0.01" min="0" max="4">
+		<br>
+		<button onclick="convertCGPA()">Convert</button>
+		<div class="result" id="result"></div>
+	</div>
+
+	<script>
+		// I had my inspiration through the GKS-G application
+		function convertCGPA() {
+			const cgpa = parseFloat(document.getElementById("cgpa").value);
+			let points = "Invalid CGPA";
+
+			if (cgpa >= 3.97 && cgpa <= 4.0) points = 100;
+   else if (cgpa >= 3.92) points = 99;
+   else if (cgpa >= 3.88) points = 98;
+   else if (cgpa >= 3.84) points = 97;
+   else if (cgpa >= 3.80) points = 96;
+   else if (cgpa >= 3.75) points = 95;
+   else if (cgpa >= 3.71) points = 94;
+   else if (cgpa >= 3.67) points = 93;
+   else if (cgpa >= 3.62) points = 92;
+   else if (cgpa >= 3.58) points = 91;
+   else if (cgpa >= 3.49) points = 90;
+   else if (cgpa >= 3.41) points = 89;
+   else if (cgpa >= 3.32) points = 88;
+   else if (cgpa >= 3.24) points = 87;
+   else if (cgpa >= 3.15) points = 86;
+   else if (cgpa >= 3.07) points = 85;
+   else if (cgpa >= 2.98) points = 84;
+   else if (cgpa >= 2.90) points = 83;
+   else if (cgpa >= 2.81) points = 82;
+   else if (cgpa >= 2.72) points = 81;
+   else if (cgpa >= 2.64) points = 80;
+
+			document.getElementById("result").innerText = 
+				points !== "Invalid CGPA" ? `Your 100 Points Score: ${points}` : points;
+		}
+	</script>
+</body>
+</html>
